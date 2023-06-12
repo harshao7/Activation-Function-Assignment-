@@ -3,8 +3,11 @@
 Activating Your Neural Network: Choosing the Right Activation Function
  
 1. Introduction
+
 Neural networks have revolutionized the field of machine learning and have become an integral part of many modern applications. Activation functions play a crucial role in neural networks as they determine the output of a neuron. Choosing the right activation function is essential for achieving optimal performance. This report presents an approach to adaptively determine the most suitable AF for a 1-hidden layer neural network model based on the characteristics of the dataset. By exploiting a flexible functional form, `k0 + k1 * x`, the ANN model can learn and adapt the best AF by estimating the parameters `k0` and `k1` through multiple runs.
+
 2. Implementation Details
+
 The implementation utilizes Python programming language along with the TensorFlow library. The Wisconsin Breast Cancer dataset is employed as the benchmark dataset for evaluation. The following steps were carried out:
 2.1. Data Preprocessing: The dataset is preprocessed by applying feature scaling using the StandardScaler and encoding the categorical labels using LabelEncoder. This ensures that the input data is normalized and suitable for training the neural network model.
 2.2. Train-Test Split: The preprocessed dataset is split into training and testing sets, with a 70:30 ratio, respectively. The training set is utilized for model training, while the testing set is used for evaluating the performance of the trained model.
@@ -15,6 +18,7 @@ The implementation utilizes Python programming language along with the TensorFlo
 2.7. Loss vs. Epochs Plot: The training loss is plotted against the number of epochs for the best AF and parameters. This plot provides insights into the convergence and stability of the model during the training process.
  
 3. Results and Discussion
+
 The exploration of different activation functions and parameter combinations resulted in the identification of the best activation function, as well as the optimal values for `k0` and `k1`. The following details provide a more elaborate discussion on the choice of the best activation function and parameters:
 Best Activation Function: ReLU
 ReLU, short for Rectified Linear Unit, is a widely used activation function known for its ability to alleviate the vanishing gradient problem and accelerate convergence during training. The ReLU activation function is defined as `f(x) = max(0, x)`, which means it outputs zero for negative inputs and passes positive inputs unchanged. In this study, ReLU demonstrated superior performance compared to other activation functions, such as Sigmoid and Tanh, for the given dataset.
@@ -38,9 +42,13 @@ The F1-Score was calculated separately for the training and testing sets to eval
 These results demonstrate a high level of precision and recall in both the training and testing sets. The F1-Score close to 1 indicates that the model performs well in correctly classifying instances of both classes with minimal misclassification.
  
 In summary, the selection of the ReLU activation function, along with the optimal parameters `k0 = 0.0` and `k1 = 0.22`, resulted in a highly accurate and effective neural network model.
+
 4. Conclusion
+
 In this report, we presented a 1-hidden layer neural network model that adapts its activation function using the Ada-Act approach. The model successfully learns the most suitable activation function for each dataset by adapting the parameters k0 and k1. The evaluation results demonstrate the effectiveness of the ReLU activation function in improving the network's performance. Our findings highlight the importance of considering the activation function as a critical component in ANNs and its impact on achieving better predictive accuracy.
+
 5. Future Work
+
 There are several avenues for future exploration in this research area. Possible directions include investigating different distributions for sampling the parameters k0 and k1, exploring the adaptability of activation functions in deeper neural networks, and evaluating the proposed approach on more diverse datasets. Furthermore, conducting comparative studies with other adaptive
 References
 [1] Sharma, S., Sharma, S. (2023). Implementation of Adaptive Activation Functions in Neural Networks for Breast Cancer Classification. Technical Report. Global Institute of Technology, Jaipur.
